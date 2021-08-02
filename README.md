@@ -14,14 +14,14 @@ composer require rector/rector --dev
 
 ## Use Sets
 
-To add a set to your config, use `Rector\PHPOffice\Set\DoctrineSetList` class and pick one of constants:
+To add a set to your config, use `Rector\PHPOffice\Set\PHPOfficeSetList` class and pick one of constants:
 
 ```php
-use Rector\Doctrine\Set\DoctrineSetList;
+use Rector\Doctrine\Set\PHPOfficeSetList;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 
 return static function (ContainerConfigurator $containerConfigurator): void {
-    $containerConfigurator->import(DoctrineSetList::DOCTRINE_CODE_QUALITY);
+    $containerConfigurator->import(PHPOfficeSetList::PHPEXCEL_TO_PHPSPREADSHEET);
 };
 ```
 
