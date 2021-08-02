@@ -26,10 +26,7 @@
     "autoload-dev": {
         "psr-4": {
             "Rector\\PHPOffice\\Tests\\": "tests"
-        },
-        "classmap": [
-            "stubs"
-        ]
+        }
     },
     "scripts": {
         "phpstan": "vendor/bin/phpstan analyse --ansi --error-format symplify",
