@@ -1,6 +1,6 @@
 <?php
 
-namespace Rector\Tests\PHPOffice\Rector\StaticCall\ChangePdfWriterRector\Fixture;
+namespace Rector\PHPOffice\Tests\Rector\StaticCall\ChangePdfWriterRector\Fixture;
 
 final class VariableFormatFixture
 {
@@ -14,7 +14,7 @@ final class VariableFormatFixture
 -----
 <?php
 
-namespace Rector\Tests\PHPOffice\Rector\StaticCall\ChangePdfWriterRector\Fixture;
+namespace Rector\PHPOffice\Tests\Rector\StaticCall\ChangePdfWriterRector\Fixture;
 
 final class VariableFormatFixture
 {

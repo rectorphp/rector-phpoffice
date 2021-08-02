@@ -1,6 +1,6 @@
 <?php
 
-namespace Rector\Tests\PHPOffice\Rector\StaticCall\ChangeSearchLocationToRegisterReaderRector\Fixture;
+namespace Rector\PHPOffice\Tests\Rector\StaticCall\ChangeSearchLocationToRegisterReaderRector\Fixture;
 
 final class Fixture
 {
@@ -14,7 +14,7 @@ final class Fixture
 -----
 <?php
 
-namespace Rector\Tests\PHPOffice\Rector\StaticCall\ChangeSearchLocationToRegisterReaderRector\Fixture;
+namespace Rector\PHPOffice\Tests\Rector\StaticCall\ChangeSearchLocationToRegisterReaderRector\Fixture;
 
 final class Fixture
 {

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Rector\Tests\PHPOffice\Rector\MethodCall\ChangeConditionalReturnedCellRector;
+namespace Rector\PHPOffice\Tests\Rector\MethodCall\ChangeConditionalReturnedCellRector;
 
 use Iterator;
 use Rector\Testing\PHPUnit\AbstractRectorTestCase;

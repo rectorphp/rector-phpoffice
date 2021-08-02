@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Rector\Tests\PHPOffice\Rector\MethodCall\IncreaseColumnIndexRector;
+namespace Rector\PHPOffice\Tests\Rector\MethodCall\IncreaseColumnIndexRector;
 
 use Iterator;
 use Rector\Testing\PHPUnit\AbstractRectorTestCase;

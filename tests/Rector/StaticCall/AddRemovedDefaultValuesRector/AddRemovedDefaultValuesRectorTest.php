@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Rector\Tests\PHPOffice\Rector\StaticCall\AddRemovedDefaultValuesRector;
+namespace Rector\PHPOffice\Tests\Rector\StaticCall\AddRemovedDefaultValuesRector;
 
 use Iterator;
 use Rector\Testing\PHPUnit\AbstractRectorTestCase;

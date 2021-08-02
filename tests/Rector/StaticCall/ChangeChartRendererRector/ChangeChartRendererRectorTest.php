@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Rector\Tests\PHPOffice\Rector\StaticCall\ChangeChartRendererRector;
+namespace Rector\PHPOffice\Tests\Rector\StaticCall\ChangeChartRendererRector;
 
 use Iterator;
 use Rector\Testing\PHPUnit\AbstractRectorTestCase;

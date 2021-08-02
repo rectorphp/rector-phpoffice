@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Rector\Tests\PHPOffice\Rector\StaticCall\ChangePdfWriterRector;
+namespace Rector\PHPOffice\Tests\Rector\StaticCall\ChangePdfWriterRector;
 
 use Iterator;
 use Rector\Testing\PHPUnit\AbstractRectorTestCase;

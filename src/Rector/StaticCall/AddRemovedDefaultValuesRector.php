@@ -17,7 +17,7 @@ use Symplify\RuleDocGenerator\ValueObject\RuleDefinition;
 /**
  * @changelog https://github.com/PHPOffice/PhpSpreadsheet/commit/033a4bdad56340795a5bf7ec3c8a2fde005cda24 https://github.com/PHPOffice/PhpSpreadsheet/blob/master/docs/topics/migration-from-PHPExcel.md#removed-default-values
  *
- * @see \Rector\Tests\PHPOffice\Rector\StaticCall\AddRemovedDefaultValuesRector\AddRemovedDefaultValuesRectorTest
+ * @see \Rector\PHPOffice\Tests\Rector\StaticCall\AddRemovedDefaultValuesRector\AddRemovedDefaultValuesRectorTest
  */
 final class AddRemovedDefaultValuesRector extends AbstractRector
 {
@@ -105,6 +105,7 @@ CODE_SAMPLE
 
     private function isCallerObjectType(StaticCall | MethodCall $node, ObjectType $objectType): bool
     {
-        return $this->isObjectType($node instanceof MethodCall ? $node->var : $node->class, $objectType);
+        $caller = $node instanceof MethodCall ? $node->var : $node->class;
+        return $this->isObjectType($caller, $objectType);
     }
 }
