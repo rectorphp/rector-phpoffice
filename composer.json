@@ -15,7 +15,6 @@
         "symplify/easy-coding-standard": "^9.4",
         "symplify/rule-doc-generator": "^9.4",
         "rector/rector-src": "dev-main",
-        "doctrine/orm": "^2.9",
         "rector/rector-generator": "^0.2"
     },
     "autoload": {
