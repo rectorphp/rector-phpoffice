@@ -12,6 +12,10 @@ return static function (ContainerConfigurator $containerConfigurator): void {
         ->autowire()
         ->autoconfigure();
 
-    $services->load('Rector\\Doctrine\\', __DIR__ . '/../src')
-        ->exclude([__DIR__ . '/../src/Rector', __DIR__ . '/../src/ValueObject']);
+    $services->load('Rector\\PHPOffice\\', __DIR__ . '/../src')
+        ->exclude([
+            __DIR__ . '/../src/Set',
+            __DIR__ . '/../src/Rector',
+            __DIR__ . '/../src/ValueObject'
+        ]);
 };
