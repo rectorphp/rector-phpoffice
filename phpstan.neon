@@ -1,0 +1,29 @@
+includes:
+    - vendor/symplify/phpstan-rules/config/symplify-rules.neon
+
+parameters:
+    level: max
+
+    checkGenericClassInNonGenericObjectType: false
+
+    paths:
+        - config
+        - src
+        - tests
+
+    scanDirectories:
+        - stubs
+
+    excludePaths:
+        - */Source/*
+        - *Source/*
+
+    ignoreErrors:
+        -
+            message: '#Parameter "(.*?)" cannot be nullable#'
+            paths:
+                - src/NodeAnalyzer/SetterClassMethodAnalyzer.php
+
+        # false postiive on class-strng
+        - '#getByAnnotationClass\(\) expects class\-string, string given#'
+        - '#expects class\-string, string given#'
