@@ -18,3 +18,5 @@ parameters:
     ignoreErrors:
         # false positive
         - '#Method "findVariableAssignName\(\)" only calling another method call and has no added value\. Use the inlined call instead#'
+
+        - '#PhpParser\\Node\\Arg\|PhpParser\\Node\\VariadicPlaceholder\:\:\$value#'
