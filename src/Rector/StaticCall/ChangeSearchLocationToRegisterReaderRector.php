@@ -63,7 +63,7 @@ CODE_SAMPLE
      */
     public function refactor(Node $node): ?Node
     {
-        $callerType = $this->nodeTypeResolver->resolve($node->class);
+        $callerType = $this->nodeTypeResolver->getType($node->class);
         if (! $callerType->isSuperTypeOf(new ObjectType('PHPExcel_IOFactory'))->yes()) {
             return null;
         }

@@ -64,7 +64,7 @@ CODE_SAMPLE
      */
     public function refactor(Node $node): ?Node
     {
-        $callerType = $this->nodeTypeResolver->resolve($node->class);
+        $callerType = $this->nodeTypeResolver->getType($node->class);
 
         if ($this->isSettingsPdfRendererStaticCall($callerType, $node)) {
             $this->removeNode($node);
