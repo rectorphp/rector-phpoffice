@@ -83,7 +83,7 @@ CODE_SAMPLE
     private function castArgumentToArrayIfNotArrayType(MethodCall $methodCall): void
     {
         $firstArgumentValue = $methodCall->args[0]->value;
-        $firstArgumentStaticType = $this->getStaticType($firstArgumentValue);
+        $firstArgumentStaticType = $this->getType($firstArgumentValue);
         if ($firstArgumentStaticType instanceof ArrayType) {
             return;
         }
