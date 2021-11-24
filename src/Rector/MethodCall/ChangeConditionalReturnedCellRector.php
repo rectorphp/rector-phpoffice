@@ -123,7 +123,7 @@ CODE_SAMPLE
 
             $getCellMethodCall = new MethodCall($variable, $conditionalSetValue->getNewGetMethod(), $locationArgs);
             $node->var = $getCellMethodCall;
-            $node->args = $args;
+            $node->args = array_values($args);
             $node->name = new Identifier($conditionalSetValue->getNewSetMethod());
 
             return $node;
