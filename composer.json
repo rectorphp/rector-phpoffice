@@ -15,8 +15,10 @@
         "symplify/phpstan-extensions": "^10.0",
         "symplify/easy-coding-standard": "^10.0",
         "symplify/rule-doc-generator": "^10.0",
-        "rector/rector-src": "dev-main#7e0df46",
-        "rector/rector-generator": "^0.4"
+        "rector/rector-src": "dev-main",
+        "rector/rector-generator": "^0.4",
+        "phpstan/phpstan-strict-rules": "^1.1",
+        "phpstan/phpstan-webmozart-assert": "^1.0"
     },
     "autoload": {
         "psr-4": {
