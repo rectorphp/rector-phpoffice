@@ -19,7 +19,8 @@
         "rector/rector-generator": "^0.4",
         "phpstan/phpstan-strict-rules": "^1.1",
         "phpstan/phpstan-webmozart-assert": "^1.0",
-        "symplify/vendor-patches": "^10.0"
+        "symplify/vendor-patches": "^10.0",
+        "symplify/monorepo-builder": "^10.0"
     },
     "autoload": {
         "psr-4": {
@@ -32,6 +33,7 @@
         }
     },
     "scripts": {
+        "release": "vendor/bin/monorepo-builder release patch --ansi",
         "phpstan": "vendor/bin/phpstan analyse --ansi --error-format symplify",
         "check-cs": "vendor/bin/ecs check --ansi",
         "fix-cs": "vendor/bin/ecs check --fix --ansi",
