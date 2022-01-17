@@ -7,11 +7,11 @@ namespace Rector\PHPOffice\ValueObject;
 final class ConditionalSetValue
 {
     public function __construct(
-        private string $oldMethod,
-        private string $newGetMethod,
-        private string $newSetMethod,
-        private int $argPosition,
-        private bool $hasRow
+        private readonly string $oldMethod,
+        private readonly string $newGetMethod,
+        private readonly string $newSetMethod,
+        private readonly int $argPosition,
+        private readonly bool $hasRow
     ) {
     }
 

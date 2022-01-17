@@ -11,5 +11,5 @@ final class PHPOfficeSetList implements SetListInterface
     /**
      * @var string
      */
-    public const PHPEXCEL_TO_PHPSPREADSHEET = __DIR__ . '/../../config/sets/phpexcel-to-phpspreadsheet.php';
+    final public const PHPEXCEL_TO_PHPSPREADSHEET = __DIR__ . '/../../config/sets/phpexcel-to-phpspreadsheet.php';
 }

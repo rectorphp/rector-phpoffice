@@ -11,7 +11,7 @@ final class PHPExcelMethodDefaultValues
     /**
      * @var array<string, array<string, array<int, mixed>>>
      */
-    public const METHOD_NAMES_BY_TYPE_WITH_VALUE = [
+    final public const METHOD_NAMES_BY_TYPE_WITH_VALUE = [
         'PHPExcel' => [
             'setHasMacros' => [false],
             'setMacrosCode' => [null],
