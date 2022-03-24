@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use Rector\Php71\Rector\FuncCall\RemoveExtraParametersRector;
 use Rector\PHPOffice\Rector\MethodCall\ChangeConditionalGetConditionRector;
 use Rector\PHPOffice\Rector\MethodCall\ChangeConditionalReturnedCellRector;
 use Rector\PHPOffice\Rector\MethodCall\ChangeConditionalSetConditionRector;
@@ -305,4 +306,5 @@ return static function (ContainerConfigurator $containerConfigurator): void {
             'PHPExcel_Style' => 'PhpOffice\PhpSpreadsheet\Style\Style',
             'PHPExcel_Worksheet' => 'PhpOffice\PhpSpreadsheet\Worksheet\Worksheet',
         ]);
+    $services->set(RemoveExtraParametersRector::class);
 };
