@@ -7,6 +7,5 @@ use Rector\Config\RectorConfig;
 use Rector\PHPOffice\Rector\MethodCall\ChangeConditionalReturnedCellRector;
 
 return static function (RectorConfig $rectorConfig): void {
-    $services = $rectorConfig->services();
-    $services->set(ChangeConditionalReturnedCellRector::class);
+    $rectorConfig->rule(ChangeConditionalReturnedCellRector::class);
 };

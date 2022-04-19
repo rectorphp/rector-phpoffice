@@ -7,6 +7,5 @@ use Rector\Config\RectorConfig;
 use Rector\PHPOffice\Rector\MethodCall\ChangeConditionalGetConditionRector;
 
 return static function (RectorConfig $rectorConfig): void {
-    $services = $rectorConfig->services();
-    $services->set(ChangeConditionalGetConditionRector::class);
+    $rectorConfig->rule(ChangeConditionalGetConditionRector::class);
 };
