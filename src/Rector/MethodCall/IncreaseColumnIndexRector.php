@@ -5,13 +5,11 @@ declare(strict_types=1);
 namespace Rector\PHPOffice\Rector\MethodCall;
 
 use PhpParser\Node;
-use PhpParser\Node\Expr\Assign;
 use PhpParser\Node\Expr\BinaryOp;
 use PhpParser\Node\Expr\BinaryOp\Plus;
 use PhpParser\Node\Expr\MethodCall;
 use PhpParser\Node\Expr\Variable;
 use PhpParser\Node\Scalar\LNumber;
-use PhpParser\Node\Stmt\For_;
 use PHPStan\Type\ObjectType;
 use Rector\Core\Rector\AbstractRector;
 use Symplify\RuleDocGenerator\ValueObject\CodeSample\CodeSample;
@@ -103,7 +101,9 @@ CODE_SAMPLE
         $node->setAttribute(self::ALREADY_CHANGED, true);
 
         // increase column value
-        $firstArgumentValue = $node->args[0]->value;
+        $firstArg = $node->getArgs()[0];
+
+        $firstArgumentValue = $firstArg->value;
         if ($firstArgumentValue instanceof LNumber) {
             ++$firstArgumentValue->value;
         }
@@ -113,14 +113,7 @@ CODE_SAMPLE
         }
 
         if ($firstArgumentValue instanceof Variable) {
-            // check if for() value, rather update that
-            $lNumber = $this->findPreviousForWithVariable($firstArgumentValue);
-            if (! $lNumber instanceof LNumber) {
-                $node->args[0]->value = new Plus($firstArgumentValue, new LNumber(1));
-                return null;
-            }
-
-            ++$lNumber->value;
+            $firstArg->value = new Plus($firstArgumentValue, new LNumber(1));
         }
 
         return $node;
@@ -136,48 +129,5 @@ CODE_SAMPLE
         if ($binaryOp->right instanceof LNumber) {
             ++$binaryOp->right->value;
         }
-    }
-
-    private function findPreviousForWithVariable(Variable $variable): ?LNumber
-    {
-        $for = $this->betterNodeFinder->findFirstPreviousOfTypes($variable, [For_::class]);
-        if (! $for instanceof For_) {
-            return null;
-        }
-
-        $variableName = $this->getName($variable);
-        if ($variableName === null) {
-            return null;
-        }
-
-        $assignVariable = $this->findVariableAssignName($for->init, $variableName);
-        if (! $assignVariable instanceof Assign) {
-            return null;
-        }
-
-        $assignedExpr = $assignVariable->expr;
-        if ($assignedExpr instanceof LNumber) {
-            return $assignedExpr;
-        }
-
-        return null;
-    }
-
-    /**
-     * @param Node[] $node
-     */
-    private function findVariableAssignName(array $node, string $variableName): ?Node
-    {
-        return $this->betterNodeFinder->findFirst($node, function (Node $node) use ($variableName): bool {
-            if (! $node instanceof Assign) {
-                return false;
-            }
-
-            if (! $node->var instanceof Variable) {
-                return false;
-            }
-
-            return $this->nodeNameResolver->isName($node->var, $variableName);
-        });
     }
 }
