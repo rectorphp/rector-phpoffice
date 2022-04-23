@@ -30,8 +30,8 @@ final class ForWithCalls
         $row = 5;
         $worksheet = new \PHPExcel_Worksheet();
 
-        for ($column = 1; $column < $max; $column++) {
-            $worksheet->setCellValueByColumnAndRow($column, $row, 'value ' . $column)->anotherCall();
+        for ($column = 0; $column < $max; $column++) {
+            $worksheet->setCellValueByColumnAndRow($column + 1, $row, 'value ' . $column)->anotherCall();
         }
     }
 }
