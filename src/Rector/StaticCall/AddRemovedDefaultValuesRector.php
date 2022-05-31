@@ -21,6 +21,8 @@ use Symplify\RuleDocGenerator\ValueObject\RuleDefinition;
  */
 final class AddRemovedDefaultValuesRector extends AbstractRector
 {
+    private bool $hasChanged = false;
+
     public function getRuleDefinition(): RuleDefinition
     {
         return new RuleDefinition('Complete removed default values explicitly', [
@@ -61,7 +63,7 @@ CODE_SAMPLE
     /**
      * @param StaticCall|MethodCall $node
      */
-    public function refactor(Node $node): StaticCall | MethodCall
+    public function refactor(Node $node): null | StaticCall | MethodCall
     {
         foreach (PHPExcelMethodDefaultValues::METHOD_NAMES_BY_TYPE_WITH_VALUE as $type => $defaultValuesByMethodName) {
             if (! $this->isCallerObjectType($node, new ObjectType($type))) {
@@ -75,6 +77,10 @@ CODE_SAMPLE
 
                 $this->refactorArgs($node, $defaultValuesByPosition);
             }
+        }
+
+        if (! $this->hasChanged) {
+            return null;
         }
 
         return $node;
@@ -100,6 +106,7 @@ CODE_SAMPLE
             }
 
             $node->args[$position] = $arg;
+            $this->hasChanged = true;
         }
     }
 

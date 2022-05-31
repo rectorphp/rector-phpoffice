@@ -90,7 +90,7 @@ CODE_SAMPLE
             }
         }
 
-        return $node;
+        return null;
     }
 
     private function isSettingsPdfRendererStaticCall(Type $callerType, StaticCall $staticCall): bool
