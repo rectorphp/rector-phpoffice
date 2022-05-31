@@ -63,7 +63,7 @@ CODE_SAMPLE
     /**
      * @param StaticCall|MethodCall $node
      */
-    public function refactor(Node $node): StaticCall | MethodCall
+    public function refactor(Node $node): null | StaticCall | MethodCall
     {
         foreach (PHPExcelMethodDefaultValues::METHOD_NAMES_BY_TYPE_WITH_VALUE as $type => $defaultValuesByMethodName) {
             if (! $this->isCallerObjectType($node, new ObjectType($type))) {
