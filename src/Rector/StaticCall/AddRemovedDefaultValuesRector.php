@@ -21,6 +21,8 @@ use Symplify\RuleDocGenerator\ValueObject\RuleDefinition;
  */
 final class AddRemovedDefaultValuesRector extends AbstractRector
 {
+    private bool $hasChanged = false;
+
     public function getRuleDefinition(): RuleDefinition
     {
         return new RuleDefinition('Complete removed default values explicitly', [
@@ -77,6 +79,10 @@ CODE_SAMPLE
             }
         }
 
+        if (! $this->hasChanged) {
+            return null;
+        }
+
         return $node;
     }
 
@@ -100,6 +106,7 @@ CODE_SAMPLE
             }
 
             $node->args[$position] = $arg;
+            $this->hasChanged = true;
         }
     }
 
