@@ -9,6 +9,7 @@ use Rector\Set\Contract\SetListInterface;
 final class PHPOfficeSetList implements SetListInterface
 {
     /**
+     * @api
      * @var string
      */
     final public const PHPEXCEL_TO_PHPSPREADSHEET = __DIR__ . '/../../config/sets/phpexcel-to-phpspreadsheet.php';
