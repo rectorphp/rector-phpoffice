@@ -6,6 +6,9 @@ namespace Rector\PHPOffice\Set;
 
 use Rector\Set\Contract\SetListInterface;
 
+/**
+ * @api
+ */
 final class PHPOfficeSetList implements SetListInterface
 {
     /**
