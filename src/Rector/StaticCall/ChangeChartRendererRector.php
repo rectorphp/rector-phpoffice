@@ -32,7 +32,7 @@ final class SomeClass
     }
 }
 CODE_SAMPLE
-,
+                ,
                 <<<'CODE_SAMPLE'
 final class SomeClass
 {
