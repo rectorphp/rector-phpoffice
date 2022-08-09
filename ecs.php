@@ -10,9 +10,7 @@ return static function (ECSConfig $ecsConfig): void {
 
     $ecsConfig->paths([__DIR__ . '/src', __DIR__ . '/tests', __DIR__ . '/config', __DIR__ . '/ecs.php']);
 
-    $ecsConfig->skip([
-        '*/Source/*', '*/Fixture/*',
-    ]);
+    $ecsConfig->skip(['*/Source/*', '*/Fixture/*']);
 
     $ecsConfig->lineEnding("\n");
 };
