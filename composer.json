@@ -2,7 +2,7 @@
     "name": "rector/rector-phpoffice",
     "type": "rector-extension",
     "license": "MIT",
-    "description": "Rector upgrades rules for PHP Office",
+    "description": "Rector migration rules for PHP Office to PhpSpreadSheet",
     "require": {
         "php": ">=8.1"
     },
@@ -15,8 +15,7 @@
         "symplify/phpstan-extensions": "^11.1",
         "symplify/easy-coding-standard": "^11.1",
         "symplify/rule-doc-generator": "^11.1",
-        "rector/rector-src": "dev-main#981ab43",
-        "phpstan/phpstan-strict-rules": "^1.3",
+        "rector/rector": "dev-main",
         "phpstan/phpstan-webmozart-assert": "^1.2",
         "symplify/vendor-patches": "^11.1",
         "rector/rector-debugging": "dev-main"
