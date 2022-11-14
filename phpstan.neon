@@ -6,6 +6,8 @@ parameters:
 
     checkGenericClassInNonGenericObjectType: false
 
+    reportUnmatchedIgnoredErrors: false
+
     paths:
         - config
         - src
@@ -23,3 +25,10 @@ parameters:
         - '#Parameter \#1 \$node \(PhpParser\\Node\\(.*?) of method Rector\\(.*?)\(\) should be contravariant with parameter \$node \(PhpParser\\Node\) of method Rector\\Core\\Contract\\Rector\\PhpRectorInterface\:\:refactor\(\)#'
 
         - '#Add explicit array type to assigned "\$node\->args" expression#'
+
+        -
+            message: '#Do not use chained method calls\. Put each on separated lines#'
+            path: config/config.php
+        -
+            message: '#Method call return value that should be used, but is not#'
+            path: config/config.php
